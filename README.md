@@ -2,6 +2,11 @@
 
 Small calculator app with a FastAPI backend and a Vite + React frontend.
 
+## Project Instructions
+
+Use [PROJECT_INSTRUCTIONS.md](PROJECT_INSTRUCTIONS.md) for repo-specific
+workflow, edit scope, environment variables, and validation rules.
+
 ## Architecture
 
 ```mermaid
@@ -15,7 +20,8 @@ flowchart LR
 ## Features
 
 - FastAPI arithmetic endpoints
-- React calculator UI
+- React calculator UI with keyboard support
+- Configurable frontend API base URL
 - Dockerized backend runtime
 - Pytest coverage for the API
 - Dependabot, CI, and code scanning workflows
@@ -74,6 +80,23 @@ npm install
 npm run dev
 ```
 
+The frontend reads the backend origin from `frontend/.env`:
+
+```bash
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+If you run the backend on a different host or port, update this value in
+`frontend/.env` or `frontend/.env.example`.
+
+Keyboard shortcuts:
+
+- Number keys and `.` enter values
+- `Enter` or `=` calculates
+- `+`, `-`, `*`, `/` select operations
+- `Backspace` deletes the last digit
+- `Escape` resets the calculator
+
 ## Tests and Quality
 
 ```bash
@@ -98,7 +121,7 @@ docker compose up -d --build
 
 ## Screenshots
 
-Add UI screenshots here once the frontend design is finalized. The current frontend is a lightweight calculator form, so screenshots will be most useful after the next visual pass.
+Add UI screenshots here once the frontend design is finalized. The current frontend is a full calculator interface with a history panel and server-backed calculations, so screenshots should capture the updated layout and keyboard-driven flow.
 
 ## Contributing
 

@@ -1,0 +1,236 @@
+:root {
+  color: rgba(255, 255, 255, 0.92);
+  background: #050816;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #1f2937 0%, #0b1020 45%, #050816 100%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero {
+  max-width: 44rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 1rem 0;
+}
+
+.hero p {
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.feature-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-grid article {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  padding: 1rem;
+}
+
+.feature-grid span,
+.calculator-topbar span,
+.history-header h2 {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(186, 230, 253, 0.75);
+}
+
+.feature-grid strong {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.calculator-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  padding: 1.25rem;
+  background: rgba(2, 6, 23, 0.74);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.calculator-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calculator-topbar button,
+.history-header button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+}
+
+.display {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.38);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  text-align: right;
+  min-height: 8.5rem;
+}
+
+.expression {
+  min-height: 1.25rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+.value {
+  margin-top: 0.4rem;
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  word-break: break-all;
+}
+
+.error {
+  margin-top: 0.6rem;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+.button-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.key {
+  border: 0;
+  border-radius: 1.1rem;
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.key:active {
+  transform: scale(0.98);
+}
+
+.key:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.action {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.digit {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.operator {
+  background: #fbbf24;
+  color: #020617;
+}
+
+.equals {
+  background: #67e8f9;
+  color: #020617;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.history-panel {
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-list {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.history-list p {
+  margin: 0;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 960px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
